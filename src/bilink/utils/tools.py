@@ -1,3 +1,9 @@
+from functools import reduce
+from hashlib import md5
+import urllib.parse
+import time
+
+
 def create_headers() -> dict[str, str]:
     headers = {
         "authority": "api.vc.bilibili.com",
@@ -7,7 +13,6 @@ def create_headers() -> dict[str, str]:
         " AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/62.0.3202.9 Safari/537.36",
         "sec-ch-ua-platform": '"Windows"',
-        "sec-ch-ua-mobile": "?0",
         "sec-fetch-site": "same-site",
         "sec-fetch-mode": "cors",
         "sec-fetch-dest": "empty",
@@ -34,11 +39,6 @@ def print_banner() -> None:
     """
     print(f"\033[1;34m{banner}\033[0m")
 
-
-from functools import reduce
-from hashlib import md5
-import urllib.parse
-import time
 
 mixinKeyEncTab = [
     46,
